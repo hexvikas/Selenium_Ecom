@@ -1,0 +1,42 @@
+import os
+import datetime
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
+# Screenshot setup
+REPORTS_DIR = "reports"
+SHOTS_DIR = os.path.join(REPORTS_DIR, "screenshots")
+os.makedirs(SHOTS_DIR, exist_ok=True)
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+try:
+    driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    driver.maximize_window()
+    time.sleep(2)
+
+    driver.find_element(By.NAME, "username").send_keys("Admin")
+    driver.find_element(By.NAME, "password").send_keys("admin123")
+    driver.find_element(By.XPATH, "//button").click()
+
+    time.sleep(2)
+
+    print("Login Successful:", "dashboard" in driver.current_url.lower())
+    print("TC PASSED")
+
+except Exception as e:
+    ts = datetime.datetime.now().strftime("%d%m%y_%H%M%S")
+    tc_name = os.path.splitext(os.path.basename(__file__))[0]
+    shot_name = f"{tc_name}_{ts}.png"
+    shot_path = os.path.join(SHOTS_DIR, shot_name)
+
+    driver.save_screenshot(shot_path)
+    print(f"Screenshot saved: {shot_path}")
+
+    raise
+
+finally:
+    driver.quit()

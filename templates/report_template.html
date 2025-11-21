@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Selenium Suite Report</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External CSS (relative from /reports) -->
+  <link rel="stylesheet" href="../templates/report_style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>✅ Selenium Modular Test Suite Report</h1>
+
+    <div class="meta">
+      <div>Report Generated: <b>{{REPORT_TIME}}</b></div>
+      <div>Suite Execution ID: <b>{{RUN_ID}}</b></div>
+    </div>
+
+    <div class="summary">
+      <div class="card"><b>Total TCs:</b><br>{{TOTAL_TCS}}</div>
+      <div class="card"><b>Total Duration:</b><br>{{TOTAL_DURATION}} sec</div>
+      <div class="card pass"><b>Passed:</b><br>{{PASSED}}</div>
+      <div class="card fail"><b>Failed:</b><br>{{FAILED}}</div>
+    </div>
+
+    <h2>📊 Execution Time Chart</h2>
+    <div class="chart-box wide">
+      <canvas id="timeChart"></canvas>
+    </div>
+
+    <h2>📊 PASS vs FAIL</h2>
+    <div class="chart-box small">
+      <canvas id="statusChart"></canvas>
+    </div>
+
+    <h2>🧾 Test Case Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Test Case</th>
+          <th>Status</th>
+          <th>Time</th>
+          <th>Stdout</th>
+          <th>Error</th>
+          <th>Screenshot</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{TC_ROWS}}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Data for charts -->
+  <script>
+    window.reportData = {
+      tcNames: {{TC_NAMES}},
+      tcTimes: {{TC_TIMES}},
+      tcStatus: {{TC_STATUS}}
+    };
+  </script>
+
+  <!-- External JS (relative from /reports) -->
+  <script src="../templates/chart_script.js"></script>
+</body>
+</html>

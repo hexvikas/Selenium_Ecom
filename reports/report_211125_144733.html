@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Selenium Suite Report</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External CSS (relative from /reports) -->
+  <link rel="stylesheet" href="../templates/report_style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>✅ Selenium Modular Test Suite Report</h1>
+
+    <div class="meta">
+      <div>Report Generated: <b>21-11-2025 14:47:33</b></div>
+      <div>Suite Execution ID: <b>1763716578</b></div>
+    </div>
+
+    <div class="summary">
+      <div class="card"><b>Total TCs:</b><br>4</div>
+      <div class="card"><b>Total Duration:</b><br>74.94 sec</div>
+      <div class="card pass"><b>Passed:</b><br>3</div>
+      <div class="card fail"><b>Failed:</b><br>1</div>
+    </div>
+
+    <h2>📊 Execution Time Chart</h2>
+    <div class="chart-box wide">
+      <canvas id="timeChart"></canvas>
+    </div>
+
+    <h2>📊 PASS vs FAIL</h2>
+    <div class="chart-box small">
+      <canvas id="statusChart"></canvas>
+    </div>
+
+    <h2>🧾 Test Case Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Test Case</th>
+          <th>Status</th>
+          <th>Time</th>
+          <th>Stdout</th>
+          <th>Error</th>
+          <th>Screenshot</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+    <tr>
+        <td>TC1.1_google_search.py</td>
+        <td class="status-pass">PASS</td>
+        <td>14.53 sec<br><small>14:46:32</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Page Title: Google
+TC PASSED</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">No error</pre>
+            </details>
+        </td>
+        <td>—</td>
+    </tr>
+    
+    <tr>
+        <td>TC2_GoogleSearch.py</td>
+        <td class="status-pass">PASS</td>
+        <td>13.87 sec<br><small>14:46:47</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Top 5 Results:
+TC PASSED</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">No error</pre>
+            </details>
+        </td>
+        <td>—</td>
+    </tr>
+    
+    <tr>
+        <td>TC3_Flipkart_Search.py</td>
+        <td class="status-fail">FAIL</td>
+        <td>24.09 sec<br><small>14:47:12</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Top 5 Laptops:
+Screenshot saved: reports\screenshots\TC3_Flipkart_Search_211125_144709.png</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">Traceback (most recent call last):
+  File &quot;C:\Users\144140\OneDrive - Arrow Electronics, Inc\Documents\Python Learning\Selenium_Ecom\TC3_Flipkart_Search.py&quot;, line 38, in &lt;module&gt;
+    name = p.find_element(By.XPATH, &quot;.//div[contains(@class,&#x27;_4rR01T&#x27;)]&quot;).text
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webelement.py&quot;, line 601, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {&quot;using&quot;: by, &quot;value&quot;: value})[&quot;value&quot;]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webelement.py&quot;, line 572, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 458, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\errorhandler.py&quot;, line 233, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//div[contains(@class,&#x27;_4rR01T&#x27;)]&quot;}
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x12c4103
+	0x12c4144
+	0x10ce71d
+	0x111a03d
+	0x111a41b
+	0x110f8c1
+	0x113c954
+	0x110f7c4
+	0x113cac4
+	0x115ee17
+	0x113c706
+	0x110da30
+	0x110ed54
+	0x15357b4
+	0x153098a
+	0x12ec392
+	0x12dc4c8
+	0x12e324d
+	0x12cc478
+	0x12cc63c
+	0x12b67ca
+	0x766c5d49
+	0x77e3d6db
+	0x77e3d661</pre>
+            </details>
+        </td>
+        <td><span class="sshot-link"><a target="_blank" href="screenshots\TC3_Flipkart_Search_211125_144709.png">View</a></span></td>
+    </tr>
+    
+    <tr>
+        <td>TC4_HRM_Login.py</td>
+        <td class="status-pass">PASS</td>
+        <td>18.45 sec<br><small>14:47:32</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Login Successful: True</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">No error</pre>
+            </details>
+        </td>
+        <td>—</td>
+    </tr>
+    
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Data for charts -->
+  <script>
+    window.reportData = {
+      tcNames: ['TC1.1_google_search.py', 'TC2_GoogleSearch.py', 'TC3_Flipkart_Search.py', 'TC4_HRM_Login.py'],
+      tcTimes: [14.53, 13.87, 24.09, 18.45],
+      tcStatus: ['PASS', 'PASS', 'FAIL', 'PASS']
+    };
+  </script>
+
+  <!-- External JS (relative from /reports) -->
+  <script src="../templates/chart_script.js"></script>
+</body>
+</html>

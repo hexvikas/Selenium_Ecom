@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Selenium Suite Report</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+        }
+        h1 { color: #38bdf8; }
+        h2 { color: #38bdf8; }
+
+        .summary {
+            background: #111827;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background: #1f2937;
+            padding: 10px 15px;
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #111827;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #334155;
+            vertical-align: top;
+        }
+        th {
+            background: #1e293b;
+            color: #f8fafc;
+        }
+        tr:hover { background: #0b1220; }
+        pre {
+            white-space: pre-wrap;
+            background: #0b1020;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+        details summary {
+            cursor: pointer;
+            color: #a5b4fc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>✅ Selenium Basic Test Suite Report</h1>
+    <p style="color:#94a3b8;">Report Generated: <b>21-11-2025 12:52:25</b></p>
+    <p style="color:#94a3b8;">Suite Execution ID: <b>1763709681</b></p>
+
+    <div class="summary">
+        <div class="card"><b>Total TCs:</b><br>4</div>
+        <div class="card"><b>Total Duration:</b><br>64.0 sec</div>
+        <div class="card"><b>Passed:</b><br>2</div>
+        <div class="card"><b>Failed:</b><br>2</div>
+    </div>
+
+    <h2>📊 Execution Time Chart</h2>
+
+    <div style="max-width: 800px; margin: auto;">
+        <canvas id="timeChart" height="120"></canvas>
+    </div>
+
+    <br><br>
+
+    <h2>📊 PASS vs FAIL</h2>
+
+    <div style="max-width: 400px; margin: auto;">
+        <canvas id="statusChart" height="250"></canvas>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Test Case</th>
+                <th>Status</th>
+                <th>Time</th>
+                <th>Stdout</th>
+                <th>Error</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>TC1_google_search.py</td>
+        <td style="font-weight:bold; color:#22c55e;">PASS</td>
+        <td>11.8 sec<br><small>12:51:32</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Page Title: Google</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">No error</pre>
+            </details>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>TC2_FLIPKART SEARCH.py</td>
+        <td style="font-weight:bold; color:#22c55e;">PASS</td>
+        <td>13.15 sec<br><small>12:51:47</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Top 5 Results:</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">No error</pre>
+            </details>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>TC3_Search_item.py</td>
+        <td style="font-weight:bold; color:#ef4444;">FAIL</td>
+        <td>20.19 sec<br><small>12:52:08</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>Top 5 Laptops:</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">Traceback (most recent call last):
+  File &quot;C:\Users\144140\OneDrive - Arrow Electronics, Inc\Documents\Python Learning\Selenium_Ecom\TC3_Search_item.py&quot;, line 29, in &lt;module&gt;
+    name = p.find_element(By.XPATH, &quot;.//div[contains(@class,&#x27;_4rR01T&#x27;)]&quot;).text
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webelement.py&quot;, line 601, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {&quot;using&quot;: by, &quot;value&quot;: value})[&quot;value&quot;]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webelement.py&quot;, line 572, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 458, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\errorhandler.py&quot;, line 233, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;.//div[contains(@class,&#x27;_4rR01T&#x27;)]&quot;}
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x12c4103
+	0x12c4144
+	0x10ce71d
+	0x111a03d
+	0x111a41b
+	0x110f8c1
+	0x113c954
+	0x110f7c4
+	0x113cac4
+	0x115ee17
+	0x113c706
+	0x110da30
+	0x110ed54
+	0x15357b4
+	0x153098a
+	0x12ec392
+	0x12dc4c8
+	0x12e324d
+	0x12cc478
+	0x12cc63c
+	0x12b67ca
+	0x766c5d49
+	0x77e3d6db
+	0x77e3d661</pre>
+            </details>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>TC4_hrm_login.py</td>
+        <td style="font-weight:bold; color:#ef4444;">FAIL</td>
+        <td>14.86 sec<br><small>12:52:24</small></td>
+        <td>
+            <details>
+                <summary>View Output</summary>
+                <pre>No stdout</pre>
+            </details>
+        </td>
+        <td>
+            <details>
+                <summary>View Error</summary>
+                <pre style="color:#ef4444;">Traceback (most recent call last):
+  File &quot;C:\Users\144140\OneDrive - Arrow Electronics, Inc\Documents\Python Learning\Selenium_Ecom\TC4_hrm_login.py&quot;, line 13, in &lt;module&gt;
+    driver.find_element(By.NAME, &quot;username&quot;).send_keys(&quot;Admin&quot;)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 926, in find_element
+    return self.execute(Command.FIND_ELEMENT, {&quot;using&quot;: by, &quot;value&quot;: value})[&quot;value&quot;]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 458, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File &quot;C:\Users\144140\AppData\Roaming\Python\Python314\site-packages\selenium\webdriver\remote\errorhandler.py&quot;, line 233, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[name=&quot;username&quot;]&quot;}
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x12c4103
+	0x12c4144
+	0x10ce71d
+	0x111a03d
+	0x111a41b
+	0x11617f2
+	0x113c954
+	0x115ee17
+	0x113c706
+	0x110da30
+	0x110ed54
+	0x15357b4
+	0x153098a
+	0x12ec392
+	0x12dc4c8
+	0x12e324d
+	0x12cc478
+	0x12cc63c
+	0x12b67ca
+	0x766c5d49
+	0x77e3d6db
+	0x77e3d661</pre>
+            </details>
+        </td>
+    </tr>
+    
+        </tbody>
+    </table>
+
+    <script>
+        const tcNames = ['TC1_google_search.py', 'TC2_FLIPKART SEARCH.py', 'TC3_Search_item.py', 'TC4_hrm_login.py'];
+        const tcTimes = [11.8, 13.15, 20.19, 14.86];
+        const tcStatus = ['PASS', 'PASS', 'FAIL', 'FAIL'];
+
+        // Bar Chart (Execution Time)
+        new Chart(document.getElementById('timeChart'), {
+            type: 'bar',
+            data: {
+                labels: tcNames,
+                datasets: [{
+                    label: 'Execution Time (seconds)',
+                    data: tcTimes,
+                    backgroundColor: '#38bdf8'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: true } },
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'white' }
+                    },
+                    x: { ticks: { color: 'white' } }
+                }
+            }
+        });
+
+        // Doughnut Chart (Pass/Fail)
+        const passCount = tcStatus.filter(s => s === "PASS").length;
+        const failCount = tcStatus.filter(s => s === "FAIL").length;
+
+        new Chart(document.getElementById('statusChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['PASS', 'FAIL'],
+                datasets: [{
+                    data: [passCount, failCount],
+                    backgroundColor: ['#22c55e', '#ef4444']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: true } }
+            }
+        });
+    </script>
+
+</body>
+</html>
